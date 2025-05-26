@@ -426,6 +426,17 @@ export const comment = (() => {
             return;
         }
 
+        const numberOfGuest = document.getElementById('form-guest');
+        if(!id && numberOfGuest && numberOfGuest.value === '0'){
+            alert('Please select your number of guest');
+            return;
+        }
+
+        if(!id && presence && presence.value == '1' && numberOfGuest.value == '0'){
+            alert('Please select your number of guest');
+            return;
+        }
+
         const gifIsOpen = gif.isOpen(id ? id : gif.default);
         const gifId = gif.getResultId(id ? id : gif.default);
         const gifCancel = gif.buttonCancel(id);
@@ -451,6 +462,10 @@ export const comment = (() => {
 
         if (!session.isAdmin() && presence && presence.value !== '0') {
             presence.disabled = true;
+        }
+
+        if(!session.isAdmin() && numberOfGuest && numberOfGuest.value !== '0'){
+            numberOfGuest.disabled = true;
         }
 
         if (form) {
@@ -494,6 +509,10 @@ export const comment = (() => {
 
         if (presence) {
             presence.disabled = false;
+        }
+
+        if(numberOfGuest){
+            numberOfGuest.disabled = false;
         }
 
         if (gifIsOpen && gifId) {

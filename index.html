@@ -87,7 +87,7 @@
 <!-- <html lang="id" data-bs-theme="auto"> ['auto', 'dark', 'light'] -->
 <!-- Recommend use 'data-src' in img tag -->
 
-<body data-key="d9faced3377732b0edf19e90d1bde0cd5de04801c75eb41743" data-url="https://api.ulems.my.id/" data-audio="./assets/music/sound.m4a" data-confetti="true" data-time="2025-07-19 11:00:00">
+<body data-key="062d6d3740301b0e5656443fe4cba978c59f2f72027dafba71" data-url="http://abc.uhuy.net/" data-audio="./assets/music/sound.mp3" data-confetti="true" data-time="2025-07-19 11:00:00">
 
     <!-- Root Invitation -->
     <div class="row m-0 p-0 opacity-0" id="root">
@@ -386,16 +386,25 @@
                             <h2 class="font-cinzel text-center mt-2 mb-4" style="font-size: 2.25rem;">Words &amp; Prayers</h2>
 
                             <div class="mb-3">
-                                <label for="form-name" class="form-label my-1"><i class="fa-solid fa-person me-2"></i>Name</label>
+                                <!-- <label for="form-name" class="form-label my-1"><i class="fa-solid fa-person me-2"></i>Name</label> -->
                                 <input type="text" class="form-control shadow-sm rounded-4" id="form-name" minlength="2" maxlength="50" placeholder="Fill your name" autocomplete="name" data-offline-disabled="false">
                             </div>
 
                             <div class="mb-3">
-                                <label for="form-presence" class="form-label my-1"><i class="fa-solid fa-person-circle-question me-2"></i>Confirmation of attendance</label>
+                                <!-- <label for="form-presence" class="form-label my-1"><i class="fa-solid fa-person-circle-question me-2"></i>Confirmation of attendance</label> -->
                                 <select class="form-select shadow-sm rounded-4" id="form-presence" autocomplete="off" data-offline-disabled="false">
                                     <option value="0" selected>Confirmation of attendance</option>
                                     <option value="1">&#9989; Attend</option>
                                     <option value="2">&#10060; Not Attend</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <!-- <label for="form-presence" class="form-label my-1"><i class="fa-solid fa-person-circle-question me-2"></i>Confirmation of attendance</label> -->
+                                <select class="form-select shadow-sm rounded-4" id="form-guest" autocomplete="off" data-offline-disabled="false">
+                                    <option value="0" selected>Number of Guest</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
                                 </select>
                             </div>
 
@@ -409,7 +418,7 @@
                                     <p class="m-0">Sama bisa format text seperti Whatsapp lohh... cobainn jugaaa, makaciwww bestieee</p>
                                 </div> -->
 
-                                <label for="form-comment" class="form-label my-1"><i class="fa-solid fa-comment me-2"></i>Words &amp; Prayers</label>
+                                <!-- <label for="form-comment" class="form-label my-1"><i class="fa-solid fa-comment me-2"></i>Words &amp; Prayers</label> -->
                                 <div class="position-relative">
                                     <!-- <button class="btn btn-secondary btn-sm rounded-4 shadow-sm me-1 my-1 position-absolute bottom-0 end-0" onclick="undangan.comment.gif.open(undangan.comment.gif.default)" aria-label="button gif" data-offline-disabled="false"><i class="fa-solid fa-photo-film"></i></button> -->
                                     <textarea class="form-control shadow-sm rounded-4" id="form-comment" rows="4" minlength="1" maxlength="1000" placeholder="Write your words and prayers" autocomplete="off" data-offline-disabled="false"></textarea>
