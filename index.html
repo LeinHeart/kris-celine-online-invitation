@@ -36,9 +36,9 @@
     <meta name="color-scheme" content="dark light">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="canonical" href="https://ulems.my.id/">
-    <link rel="shortcut icon" type="image/x-icon" href="./assets/images/favicon.ico">
-    <link rel="apple-touch-icon" sizes="192x192" href="https://ulems.my.id/assets/images/icon-192x192.png">
-    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/favicon.ico">
+    <link rel="apple-touch-icon" sizes="192x192" href="./assets/images/icon-192x192.png">
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
 
     <!-- Preconnect CDN -->
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
@@ -511,12 +511,14 @@
     <div class="loading-page bg-white-black" id="welcome" style="opacity: 0;">
         <div class="d-flex justify-content-center align-items-center vh-100 overflow-y-scroll">
             <div class="d-flex flex-column text-center">
-                <h2 class="font-garamond mb-4" style="font-size: 2.25rem;">The Holy Matrimony Of</h2>
+                <div id="guest-name" data-message=""></div>
+                <h2 class="font-garamond" style="font-size: 2.25rem;">The Holy Matrimony Of</h2>
+                <br>
 
                 <img src="./assets/images/placeholder.webp" data-src="./assets/images/berdua.jpg" alt="background" class="img-center-crop rounded-circle border border-3 border-light shadow mb-4 mx-auto">
 
                 <h2 class="font-cinzel mb-4" style="font-size: 2.5rem;">Kristopher &amp; Celine</h2>
-                <div id="guest-name" data-message="Kepada Yth Bapak/Ibu/Saudara/i"></div>
+                
 
                 <button type="button" class="btn btn-light shadow rounded-4 mt-3 mx-auto" onclick="undangan.guest.open(this)"><i class="fa-solid fa-envelope-open fa-bounce me-2"></i>Open Invitation</button>
             </div>

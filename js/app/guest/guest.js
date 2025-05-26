@@ -74,7 +74,7 @@ export const guest = (() => {
             const div = document.createElement('div');
             div.classList.add('m-2');
 
-            const template = `<small class="mt-0 mb-1 mx-0 p-0">${util.escapeHtml(guestName?.getAttribute('data-message'))}</small><p class="m-0 p-0" style="font-size: 1.5rem">${util.escapeHtml(name)}</p>`;
+            const template = `<medium class="font-garamond mt-0 mb-1 mx-0 p-0">${'Dear, '+util.escapeHtml(guestName?.getAttribute('data-message'))}</small><p class="font-garamond m-0 p-0" style="font-size: 2rem">${util.escapeHtml(name)}</p><br><h2 class="font-garamond" style="font-size: 2rem;">We invite you to</h2>`;
             util.safeInnerHTML(div, template);
 
             guestName?.appendChild(div);
