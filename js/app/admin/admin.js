@@ -37,6 +37,7 @@ export const admin = (() => {
             document.getElementById('count-comment').textContent = String(resp.data.comments).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
             document.getElementById('count-like').textContent = String(resp.data.likes).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
             document.getElementById('count-present').textContent = String(resp.data.present).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+            document.getElementById('count-guest').textContent = String(resp.data.guest).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
             document.getElementById('count-absent').textContent = String(resp.data.absent).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
         });
     });

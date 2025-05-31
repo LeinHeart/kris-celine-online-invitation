@@ -386,13 +386,11 @@
                             <h2 class="font-cinzel text-center mt-2 mb-4" style="font-size: 2.25rem;">Words &amp; Prayers</h2>
 
                             <div class="mb-3">
-                                <!-- <label for="form-name" class="form-label my-1"><i class="fa-solid fa-person me-2"></i>Name</label> -->
                                 <input type="text" class="form-control shadow-sm rounded-4" id="form-name" minlength="2" maxlength="50" placeholder="Fill your name" autocomplete="name" data-offline-disabled="false">
                             </div>
 
                             <div class="mb-3">
-                                <!-- <label for="form-presence" class="form-label my-1"><i class="fa-solid fa-person-circle-question me-2"></i>Confirmation of attendance</label> -->
-                                <select class="form-select shadow-sm rounded-4" id="form-presence" autocomplete="off" data-offline-disabled="false">
+                                <select class="form-select shadow-sm rounded-4" id="form-presence" autocomplete="off" data-offline-disabled="false" onchange="attendanceChange(this);">
                                     <option value="0" selected>Confirmation of attendance</option>
                                     <option value="1">&#9989; Attend</option>
                                     <option value="2">&#10060; Not Attend</option>
@@ -400,8 +398,7 @@
                             </div>
 
                             <div class="mb-3">
-                                <!-- <label for="form-presence" class="form-label my-1"><i class="fa-solid fa-person-circle-question me-2"></i>Confirmation of attendance</label> -->
-                                <select class="form-select shadow-sm rounded-4" id="form-guest" autocomplete="off" data-offline-disabled="false">
+                                <select class="form-select shadow-sm rounded-4" id="form-guest" autocomplete="off" data-offline-disabled="false" disabled>
                                     <option value="0" selected>Number of Guest</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -584,4 +581,21 @@
     </div>
 </body>
 
+<script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function attendanceChange(input){
+        var input = $(input);
+
+        var input_attendance = $("#form-guest");
+        var value_attend = input.val();
+        
+        //1 attend, 2 not attend
+        if(value_attend == 2){
+            input_attendance.attr('disabled', true);
+        }else{
+            input_attendance.removeAttr('disabled');
+        }
+    }
+</script>
 </html>

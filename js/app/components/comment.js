@@ -196,7 +196,8 @@ export const comment = (() => {
             .send(dto.getCommentsResponseV2)
             .then(async (res) => {
                 comments.setAttribute('data-loading', 'false');
-
+                console.log(res);
+                console.log("pemisah");
                 for (const u of lastRender) {
                     await gif.remove(u);
                 }
@@ -427,16 +428,15 @@ export const comment = (() => {
         }
 
         const numberOfGuest = document.getElementById('form-guest');
-        if(!id && numberOfGuest && numberOfGuest.value === '0'){
-            alert('Please select your number of guest');
-            return;
-        }
+        const inpNumberOfGuest = $(numberOfGuest);
 
-        if(!id && presence && presence.value == '1' && numberOfGuest.value == '0'){
-            alert('Please select your number of guest');
-            return;
+        if(!inpNumberOfGuest.attr('disabled')){
+            if(numberOfGuest && numberOfGuest.value == 0){
+                Swal.fire("Please select your number of guest");
+                return;
+            }
         }
-
+        
         const gifIsOpen = gif.isOpen(id ? id : gif.default);
         const gifId = gif.getResultId(id ? id : gif.default);
         const gifCancel = gif.buttonCancel(id);
@@ -479,6 +479,7 @@ export const comment = (() => {
 
         const btn = util.disableButton(button);
         const isPresence = presence ? presence.value === '1' : true;
+        const guestAmt = numberOfGuest.value;
 
         if (!session.isAdmin()) {
             const info = storage('information');
@@ -486,12 +487,13 @@ export const comment = (() => {
 
             if (!id) {
                 info.set('presence', isPresence);
+                info.set('number_of_guest', guestAmt)
             }
         }
 
         const response = await request(HTTP_POST, `/api/comment?lang=${lang.getLanguage()}`)
             .token(session.getToken())
-            .body(dto.postCommentRequest(id, nameValue, isPresence, gifIsOpen ? null : form.value, gifId))
+            .body(dto.postCommentRequest(id, nameValue, isPresence, guestAmt, gifIsOpen ? null : form.value, gifId))
             .send(dto.getCommentResponse)
             .then((res) => res, () => null);
 
