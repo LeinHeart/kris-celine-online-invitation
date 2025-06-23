@@ -169,7 +169,8 @@ export const card = (() => {
 
         if (!(!c.ip || !c.user_agent || c.is_admin)) {
             if (c.is_parent) {
-                return `<strong class="me-1">${util.escapeHtml(c.name)}</strong><i id="badge-${c.uuid}" data-is-presence="${c.presence ? 'true' : 'false'}" class="fa-solid ${c.presence ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i>`;            
+                // return `<strong class="me-1">${util.escapeHtml(c.name)}</strong><i id="badge-${c.uuid}" data-is-presence="${c.presence ? 'true' : 'false'}" class="fa-solid ${c.presence ? 'fa-circle-check text-success' : 'fa-circle-xmark text-danger'}"></i>`;            
+                return `<strong class="me-1">${util.escapeHtml(c.name)}</strong>`;            
             }
         }
         
@@ -186,7 +187,6 @@ export const card = (() => {
         <div class="d-flex justify-content-between align-items-center">
             <p class="text-theme-auto text-truncate m-0 p-0" style="font-size: 0.95rem;">${renderTitle(c)}</p>
             <small class="text-theme-auto m-0 p-0" style="font-size: 0.75rem;">${c.created_at}</small>
-            <i>(${c.number_of_guest} Number of guests)</i>
         </div>
         <hr class="my-1">`;
 
